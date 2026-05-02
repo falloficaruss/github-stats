@@ -1,8 +1,7 @@
 export function generateSVG(stats) {
   const { name, totalStars, totalCommits, totalPRs, totalIssues } = stats;
 
-  return `
-    <svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return `<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
       <style>
         .header { font: 600 18px 'Inter', 'Ubuntu', 'Segoe UI', sans-serif; fill: #ff79c6; animation: fadeIn 0.8s ease-in-out forwards; }
         .stat-label { font: 400 14px 'Inter', 'Ubuntu', 'Segoe UI', sans-serif; fill: #f8f8f2; }

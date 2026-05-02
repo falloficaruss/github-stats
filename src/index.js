@@ -6,6 +6,20 @@ import { generateSVG } from './svgTemplate.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <body style="font-family: sans-serif; padding: 2rem; background: #282a36; color: #f8f8f2;">
+        <h1>GitHub Stats Server is Running! 🚀</h1>
+        <p>To view your stats, access the API endpoint with your username:</p>
+        <code style="background: #44475a; padding: 0.5rem; border-radius: 4px;">/api?username=YOUR_GITHUB_USERNAME</code>
+        <br><br>
+        <p>Example: <a href="/api?username=torvalds" style="color: #8be9fd;">/api?username=torvalds</a></p>
+      </body>
+    </html>
+  `);
+});
+
 app.get('/api', async (req, res) => {
   try {
     const username = req.query.username;
